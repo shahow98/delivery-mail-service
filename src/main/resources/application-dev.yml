@@ -1,0 +1,32 @@
+server:
+  port: 8347
+  servlet:
+    context-path: /api/mail-delivery
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/mail-delivery?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  mail:
+    host:
+    port:
+    protocol: smtp
+    username:
+    password:
+    properties:
+      mail.stmp.auth: true
+      mail.stmp.connectiontimeout: 5000
+      mail.stmp.timeout: 3000
+      mail.stmp.writetimeout: 5000
+      mail.smtp.ssl.enable: true
+
+logging:
+  level:
+    root: info
+    top.shahow.deliverymailservice: debug
